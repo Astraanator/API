@@ -1,6 +1,10 @@
 # **Damage-Lib and IncomingDamage-Lib**
 
-## Usage:
+
+
+## ---- DamageLib API ----
+
+### Usage:
 
 Check Users common Folder if the Lib available and download if Lib does not exist
 ```
@@ -23,8 +27,6 @@ end
 
 require "Damage_Lib"
 ```
-
-## ---- DamageLib API ----
 
 Params:
 
@@ -85,3 +87,6 @@ function Pseudo_AhriQ_KS()
     end
 end
 ```
+
+
+## ---- Incoming DamageLib API ----
