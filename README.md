@@ -83,7 +83,7 @@ getdmg("Q", target, myHero, 2)
 function Pseudo_AhriQ_KS()
     local QDmg = getdmg("Q", target, myHero, 1) + getdmg("Q", target, myHero, 2)
     if QDmg >= target.health then
-	myHero.spellbook:CastSpell(SpellSlot.Q, --Position--)
+	............
     end
 end
 ```
