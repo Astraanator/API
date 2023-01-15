@@ -90,3 +90,27 @@ end
 
 
 ## ---- Incoming DamageLib API ----
+
+### Usage:
+
+Check Users common Folder if the Lib available and download if Lib does not exist
+```
+local function FileExists(path)
+    local file = io.open(path)
+    if file then
+	io.close(file)
+	return true
+    end
+    return false
+end
+
+if not FileExists(COMMON_PATH.."Incoming_Dmg_Lib.lua") then   
+    DownloadInternalFileAsync('Incoming_Dmg_Lib.lua', COMMON_PATH, function(success)
+	if success then
+	    PrintChat("Pls reload")
+	end
+    end)
+end
+
+require "Incoming_Dmg_Lib"
+```
