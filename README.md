@@ -29,9 +29,9 @@ require "Damage_Lib"
 
 ## ---- DamageLib API ----
 
->>>>>> Params: <<<<<<
+Params:
 
--> getdmg("spell", target, source, stage, level)
+> getdmg("spell", target, source, stage, level)
 
 ### [spell] 
 	--> "Q" or "W" or "E" or "R" or "QM" or "WM" or "EM"   
