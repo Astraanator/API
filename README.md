@@ -65,7 +65,7 @@ stage 3 = "Upgraded Smite 2"
 }
 ```	  
 	  
-** You see Ahri Q have 2 Stages [Stage = 1 and Stage = 2] **
+**You see Ahri Q have 2 Stages [Stage = 1 and Stage = 2]**
 	  
 > Explanation:
 ```
