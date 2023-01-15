@@ -57,36 +57,31 @@ stage 3 = "Upgraded Smite 2"
 		Spell-Level-Damage than your current level.
 		
 
->>>>> stage explanation Ahri[Q] <<<<<<
-	  
+### stage explanation Ahri[Q]
+```	  
 ["Ahri"] = {
-{Slot = "Q", Stage = 1, DamageType = 2, Damage = 
-		function(source, target, level) 
-		return ({40, 65, 90, 115, 140})[level] + 0.35 * APDmg(source) end},
-{Slot = "Q", Stage = 2, DamageType = 3, Damage = 
-		function(source, target, level) 
-		return ({40, 65, 90, 115, 140})[level] + 0.35 * APDmg(source) end},
-}	  
+{Slot = "Q", Stage = 1, DamageType = 2, Damage = function(source, target, level) return ({40, 65, 90, 115, 140})[level] + 0.35 * APDmg(source) end},
+{Slot = "Q", Stage = 2, DamageType = 3, Damage = function(source, target, level) return ({40, 65, 90, 115, 140})[level] + 0.35 * APDmg(source) end},
+}
+```	  
 	  
-You see Ahri Q have 2 Stages [Stage = 1 and Stage = 2]
+** You see Ahri Q have 2 Stages [Stage = 1 and Stage = 2] **
 	  
-Explanation:
+> Explanation:
+```
+Ahri[Q]
 
------------Ahri[Q]----------
 getdmg("Q", target, myHero, 1)
---> Stage = 1
-	return the calculated magical dmg for the Orb way there
+--> Stage = 1 return the calculated magical dmg for the Orb way there
 
 getdmg("Q", target, myHero, 2)
---> Stage = 2
-	return the calculated true Dmg for the Orb way back
-
-----------------------------
+--> Stage = 2 return the calculated true Dmg for the Orb way back
+```
+```
 function Pseudo_AhriQ_KS()
-	local QDmg = getdmg("Q", target, myHero, 1) + 
-				 getdmg("Q", target, myHero, 2)
-	
-	if QDmg >= target.health then
-		myHero.spellbook:CastSpell(SpellSlot.Q, --Position--)
-	end
+    local QDmg = getdmg("Q", target, myHero, 1) + getdmg("Q", target, myHero, 2)
+    if QDmg >= target.health then
+	myHero.spellbook:CastSpell(SpellSlot.Q, --Position--)
+    end
 end
+```
