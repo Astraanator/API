@@ -114,3 +114,35 @@ end
 
 require "Incoming_Dmg_Lib"
 ```
+
+
+Params:
+> GetIncomingDmg(game_object, hittime, DamageTyp-Input)
+
+### [game_object] 						
+--> Object where you want the incoming dmg return
+### [hittime]
+--> [optional] Time from when the Spell Dmg should be calculated (default value = 0.2) <
+### [DamageTyp-Input]
+--> [optional] Add here your table with the units from which you want to get the Incoming Damages 
+
+
+> Explanation:
+```
+local IncDmg_Input = {
+    Damages = {"minion", "hero", "turret"}  
+}
+
+>> With this table we return all incoming Dmgs from Minions, Turrets and Heroes
+```
+```
+local function GetIncDmg()
+    local IncDmg = GetIncomingDmg(myHero, 0.2, IncDmg_Input)
+    if IncDmg > 0 then
+	local PercentHpAfterDmg = (myHero.health-IncDmg)/myHero.maxHealth*100
+	if PercentHpAfterDmg <= 20 then     ---<--- (if your hp falls below 20% due to the inc.dmg)
+	    PrintChat(tostring("Incoming-Dmg: "..IncDmg))
+	end
+    end
+end
+```
