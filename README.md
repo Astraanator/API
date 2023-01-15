@@ -23,9 +23,6 @@ end
 
 require "Damage_Lib"
 ```
->>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<
->>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<
->>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<
 
 ## ---- DamageLib API ----
 
@@ -34,15 +31,16 @@ Params:
 > getdmg("spell", target, source, stage, level)
 
 ### [spell] 
-	--> "Q" or "W" or "E" or "R" or "QM" or "WM" or "EM"   
-	--> "QM"/"WM"/"EM" == Evolved or Modified spells e.g. Nidalee, Gnar or Elise spells in theier variant Forms
-	--> "AA" <-- calculate Autoattack damage
-	--> "IGNITE" <-- calculate Ignite damage
-	--> "SMITE" <-- calculate Smite damage
-		stage 1 = "Smite"
-		stage 2 = "Upgraded Smite 1"
-		stage 3 = "Upgraded Smite 2"
-		 
+```
+"Q" or "W" or "E" or "R" or "QM" or "WM" or "EM"   
+"QM"/"WM"/"EM" == Evolved or Modified spells e.g. Nidalee, Gnar or Elise spells in theier variant Forms
+"AA" <-- calculate Autoattack damage
+"IGNITE" <-- calculate Ignite damage
+"SMITE" <-- calculate Smite damage
+stage 1 = "Smite"
+stage 2 = "Upgraded Smite 1"
+stage 3 = "Upgraded Smite 2"
+```		 
 ### [target]
 	--> object
 
