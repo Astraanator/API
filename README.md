@@ -2,9 +2,9 @@
 
 ## Usage:
 
->>>>> Check Users common Folder if the Lib available and download if Lib does not exist <<<<<
-
-> local function FileExists(path)
+Check Users common Folder if the Lib available and download if Lib does not exist
+```
+local function FileExists(path)
 	local file = io.open(path)
     if file then
 		io.close(file)
@@ -22,7 +22,7 @@ if not FileExists(COMMON_PATH.."Damage_Lib.lua") then
 end
 
 require "Damage_Lib"
-
+```
 >>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<
 >>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<
 >>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<
