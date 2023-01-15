@@ -5,20 +5,20 @@
 Check Users common Folder if the Lib available and download if Lib does not exist
 ```
 local function FileExists(path)
-	local file = io.open(path)
+    local file = io.open(path)
     if file then
-		io.close(file)
-		return true
+	io.close(file)
+	return true
     end
     return false
 end
 
 if not FileExists(COMMON_PATH.."Damage_Lib.lua") then   
-	DownloadInternalFileAsync('Damage_Lib.lua', COMMON_PATH, function(success)
-		if success then
-			PrintChat("Pls reload")
-		end
-	end)
+    DownloadInternalFileAsync('Damage_Lib.lua', COMMON_PATH, function(success)
+	if success then
+	    PrintChat("Pls reload")
+	end
+    end)
 end
 
 require "Damage_Lib"
