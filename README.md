@@ -153,7 +153,7 @@ local function GetIncDmg()
 end
 ```
 ```
-We return all Incoming damages typs
+We return all Incoming damages typs (physical, magical and true damages)
 
 local function GetIncDmg()
     local IncDmg = GetIncomingDmg(myHero, 0.2, IncDmg_Input)
