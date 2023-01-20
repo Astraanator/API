@@ -117,14 +117,17 @@ require "Incoming_Dmg_Lib"
 
 
 Params:
-> GetIncomingDmg(game_object, hittime, DamageTyp-Input)
+> GetIncomingDmg(game_object, hittime, IncDmg-Input, Damage-Typ)
 
 ### [game_object] 						
 --> Object where you want the incoming dmg return
 ### [hittime]
 --> [optional] Time from when the Spell Dmg should be calculated (default value = 0.2) <
-### [DamageTyp-Input]
+### [IncDmg-Input]
 --> [optional] Add here your table with the units from which you want to get the Incoming Damages 
+### [Damage-Typ]
+--> [optional] If we only want to return a specific dmg type like physical, magical or true damage
+    input ("AD" or "AP" or "TRUE") 
 
 
 > Explanation:
@@ -137,7 +140,7 @@ local IncDmg_Input = {
 ```
 ```
 local function GetIncDmg()
-    local IncDmg = GetIncomingDmg(myHero, 0.2, IncDmg_Input)
+    local IncDmg = GetIncomingDmg(myHero, 0.2, IncDmg_Input, "AD") --<--- We return only Incoming physical damage
     if IncDmg > 0 then
 	local PercentHpAfterDmg = (myHero.health-IncDmg)/myHero.maxHealth*100
 	if PercentHpAfterDmg <= 20 then     ---<--- (if your hp falls below 20% due to the inc.dmg)
