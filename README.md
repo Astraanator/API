@@ -127,7 +127,8 @@ Params:
 --> [optional] Add here your table with the units from which you want to get the Incoming Damages 
 ### [Damage-Typ]
 --> [optional] If we only want to return a specific dmg type like physical, magical or true damage
-    input ("AD" or "AP" or "TRUE") 
+--> input ("AD" or "AP" or "TRUE") 
+
 
 
 > Explanation:
