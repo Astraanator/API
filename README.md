@@ -140,8 +140,23 @@ local IncDmg_Input = {
 >> With this table we return all incoming Dmgs from Minions, Turrets and Heroes
 ```
 ```
+We return only Incoming physical damages ("AD")
+
 local function GetIncDmg()
-    local IncDmg = GetIncomingDmg(myHero, 0.2, IncDmg_Input, "AD") --<--- We return only Incoming physical damage
+    local IncDmg = GetIncomingDmg(myHero, 0.2, IncDmg_Input, "AD")
+    if IncDmg > 0 then
+	local PercentHpAfterDmg = (myHero.health-IncDmg)/myHero.maxHealth*100
+	if PercentHpAfterDmg <= 20 then     ---<--- (if your hp falls below 20% due to the inc.dmg)
+	    PrintChat(tostring("Incoming-Dmg: "..IncDmg))
+	end
+    end
+end
+```
+```
+We return all Incoming damages typs
+
+local function GetIncDmg()
+    local IncDmg = GetIncomingDmg(myHero, 0.2, IncDmg_Input)
     if IncDmg > 0 then
 	local PercentHpAfterDmg = (myHero.health-IncDmg)/myHero.maxHealth*100
 	if PercentHpAfterDmg <= 20 then     ---<--- (if your hp falls below 20% due to the inc.dmg)
